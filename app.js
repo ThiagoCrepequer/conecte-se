@@ -12,11 +12,12 @@ const bodyParser = require('body-parser')
 const dotenv = require('dotenv')
 dotenv.config({debug: true})
 const mongoose = require('mongoose')
+const MongoStore = require('connect-mongo')(session)
 const url = process.env.URL_MONGO
 const secret = require('crypto').randomBytes(64).toString('hex')
 const path = require('path');
 
-// Estabelece a variavel User para a conexão com o banco de dados
+// Estabelece a variavel User para a conexão com o banco de dados e a tabela usuarios
 const usuarioSchema = new mongoose.Schema({
     nome: String,
     email: {type: String, unique: true},
@@ -25,15 +26,26 @@ const usuarioSchema = new mongoose.Schema({
 })
 const User = mongoose.model('usuarios', usuarioSchema)
 
+const sessionSchema = new mongoose.Schema({
+    session_id: {type: String, required: true},
+    data_criacao: {type: Date, default: Date.now},
+    data_expiracao: {type: Date, expires: '2m'}
+})
+
+const Session = mongoose.model('sessions', sessionSchema)
+
 mongoose.set('strictQuery', true)
 mongoose.connect(url, { useNewUrlParser: true })
+
+
+const store = new MongoStore({ mongooseConnection: mongoose.connection, model: 'sessions' })
 
 // Configura a sessão
 app.use(session({
     secret: secret,
+    store: store,
     resave: false,
-    saveUninitialized: true,
-    cookie: { maxAge: 60000 }
+    saveUninitialized: true
 }))
 
 // !! Páginas do site pelo Express !! 
