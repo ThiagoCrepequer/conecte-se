@@ -24,7 +24,7 @@ form.addEventListener('submit', function(event) {
     const dados = { nome: nome, email: email, senha: senha, confirmaSenha: confirmaSenha }
 
     // Envia os dados e espera uma resposta do servidor
-    fetch('http://127.0.0.1:3000/cadastro/add', {
+    fetch('/cadastro/add', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(dados)

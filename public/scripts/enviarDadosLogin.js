@@ -8,7 +8,7 @@ form.addEventListener('submit', function(event) {
     const senha = senhaID.value
     const dados = { email: email, senha: senha }
 
-    fetch('http://127.0.0.1:3000/login/autenticacao', {
+    fetch('/login/autenticacao', {
         method: 'POST',
         headers: {  'Content-Type': 'application/json' },
         body: JSON.stringify(dados)
