@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Slabo;
+    src: url('../fonts/Slabo27px-Regular.ttf');
+}
+
 * {
     margin: 0;
 }
@@ -6,6 +11,25 @@
     background-color: rgb(240, 240, 240);
     width: 100%;
     height: 70px;
+    -webkit-box-shadow: 16px 12px 28px -29px rgba(0,0,0,0.75);
+    -moz-box-shadow: 16px 12px 28px -29px rgba(0,0,0,0.75);
+    box-shadow: 16px 12px 28px -29px rgba(0,0,0,0.75);
+}
+
+.logo-menu {
+    position: absolute;
+    left: 20px;
+    width: 67px;
+    mix-blend-mode: multiply;
+}
+
+.texto-logo {
+    display: block;
+    position: relative;
+    text-align: center;
+    top: 20px;
+    color: purple;
+    font-family: Slabo;
 }
 
 .lista-menu {
@@ -25,6 +49,19 @@ li {
     color: purple;
     border-radius: 7px;
     transition: 0.3s;
+}
+
+@media (max-width: 770px) {
+    .texto-logo {
+        opacity: 0;
+    }
+
+    li {
+        margin: 0;
+    }
+    .texto-menu {
+        padding: 10px;
+    }
 }
 
 .texto-menu:hover {

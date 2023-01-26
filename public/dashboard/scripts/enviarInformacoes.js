@@ -3,9 +3,10 @@ form = document.getElementById('formulario-informacoes')
 form.addEventListener('submit', function(event) {
     event.preventDefault()
 
-    desc = document.getElementById('input-descricao').value
+    desc = document.getElementById('text-descricao').value
     idade = document.getElementById('input-idade').value
     estado = document.getElementById('estado').value
+    
     dados = { descricao: desc, idade: idade, estado: estado }
 
     fetch('/dashboard/atualizar', {

@@ -30,6 +30,9 @@
     background-color: rgb(240, 240, 240);
     border-radius: 10px;
     position: relative;
+    -webkit-box-shadow: 16px 12px 28px -26px rgba(0,0,0,0.75);
+    -moz-box-shadow: 16px 12px 28px -26px rgba(0,0,0,0.75);
+    box-shadow: 16px 12px 28px -26px rgba(0,0,0,0.75);
 }
 
 .overlay {

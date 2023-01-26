@@ -1,0 +1,52 @@
+@font-face {
+    font-family: Roboto;
+    src: url('../../inicial/fonts/Roboto-Regular.ttf');
+}
+
+* {
+    font-family: Roboto;
+    font-size: 17px;
+}
+
+.texto-bemvindo {
+    font-size: 30px;
+    margin: 20px;
+}
+
+#formulario-informacoes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+fieldset {
+    margin: 10px;
+    padding: 2vw;
+    border-radius: 10px;
+}
+
+.input-email, .input-nome {
+    margin: 7px;
+    padding: 5px;
+}
+
+.text-area, .input-numero, .botao-enviar  {
+    margin: 0 auto;
+    display: block;
+}
+
+.text-area {
+    border-radius: 7px;
+    padding: 5px;
+}
+
+.botao-enviar {
+    margin: 10px auto;
+}
+
+.block {
+    margin: 10px;
+    display: block;
+}

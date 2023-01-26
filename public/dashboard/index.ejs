@@ -4,47 +4,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil</title>
+    <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/styles/estiloDashboard.css">
+    <link rel="stylesheet" href="/styles/menu.css">
+    <title>Olá novamente, <%= data.nome %></title>
 </head>
 <body>
+    <nav class="menu">
+        <img src="/imgs/Conect-se(logo).png" class="logo-menu">
+        <h1 class="texto-logo">CONECTE-SE</h1>
+        <ul class="lista-menu">
+            <li id="login"><a href="/" class="texto-menu">HOME</a></li>
+            <li id="perfil"><a href="/dashboard" class="texto-menu">PERFIL</a></li>
+            <li id="logout"><a href="/logout" class="texto-menu">LOGOUT</a></li>    
+        </ul>
+    </nav>
     <input type="hidden" id="id-estado" value="<%= desc.estado %>">
-    <h1>Bem vindo, <%= data.nome %></h1>
-    <div>
-        <p><%= data.email %></p>
-    </div>
+    <h1 class="texto-bemvindo">Bem vindo de volta, <%= data.nome %></h1>
     <form id="formulario-informacoes">
-        <select id="estado" name="estados">
-            <option value="AC" id="AC">Acre</option>
-            <option value="AL" id="AL">Alagoas</option>
-            <option value="AP" id="AP">Amapá</option>
-            <option value="AM" id="AM">Amazonas</option>
-            <option value="BA" id="BA">Bahia</option>
-            <option value="CE" id="CE">Ceará</option>
-            <option value="DF" id="DF">Distrito Federal</option>
-            <option value="ES" id="ES">Espírito Santo</option>
-            <option value="GO" id="GO">Goiás</option>
-            <option value="MA" id="MA">Maranhão</option>
-            <option value="MT" id="MT">Mato Grosso</option>
-            <option value="MS" id="MS">Mato Grosso do Sul</option>
-            <option value="MG" id="MG">Minas Gerais</option>
-            <option value="PA" id="PA">Pará</option>
-            <option value="PB" id="PB">Paraíba</option>
-            <option value="PR" id="PR">Paraná</option>
-            <option value="PE" id="PE">Pernambuco</option>
-            <option value="PI" id="PI">Piauí</option>
-            <option value="RJ" id="RJ">Rio de Janeiro</option>
-            <option value="RN" id="RN">Rio Grande do Norte</option>
-            <option value="RS" id="RS">Rio Grande do Sul</option>
-            <option value="RO" id="RO">Rondônia</option>
-            <option value="RR" id="RR">Roraima</option>
-            <option value="SC" id="SC">Santa Catarina</option>
-            <option value="SP" id="SP">São Paulo</option>
-            <option value="SE" id="SE">Sergipe</option>
-            <option value="TO" id="TO">Tocantins</option>
-        </select>
-        <input type="text" id="input-descricao" placeholder="Descrição" value="<%= desc.descricao %>">
-        <input type="number" id="input-idade" placeholder="Idade" value="<%= desc.idade %>">
-        <input type="submit">
+        <fieldset class="informacoes-login">
+            <legend>Login</legend>
+            <label>Nome:</label>
+            <input type="text" value="<%= data.nome %>" disabled="" class="input-nome">
+            <label>Email:</label>
+            <input type="text" value="<%= data.email %>" disabled="" class="input-email">
+        </fieldset>
+        <fieldset class="desc">
+            <legend>Descrição</legend>
+            <label class="block">Estado</label>
+            <select id="estado" name="estados">
+                <option value="AC" id="AC">Acre</option>
+                <option value="AL" id="AL">Alagoas</option>
+                <option value="AP" id="AP">Amapá</option>
+                <option value="AM" id="AM">Amazonas</option>
+                <option value="BA" id="BA">Bahia</option>
+                <option value="CE" id="CE">Ceará</option>
+                <option value="DF" id="DF">Distrito Federal</option>
+                <option value="ES" id="ES">Espírito Santo</option>
+                <option value="GO" id="GO">Goiás</option>
+                <option value="MA" id="MA">Maranhão</option>
+                <option value="MT" id="MT">Mato Grosso</option>
+                <option value="MS" id="MS">Mato Grosso do Sul</option>
+                <option value="MG" id="MG">Minas Gerais</option>
+                <option value="PA" id="PA">Pará</option>
+                <option value="PB" id="PB">Paraíba</option>
+                <option value="PR" id="PR">Paraná</option>
+                <option value="PE" id="PE">Pernambuco</option>
+                <option value="PI" id="PI">Piauí</option>
+                <option value="RJ" id="RJ">Rio de Janeiro</option>
+                <option value="RN" id="RN">Rio Grande do Norte</option>
+                <option value="RS" id="RS">Rio Grande do Sul</option>
+                <option value="RO" id="RO">Rondônia</option>
+                <option value="RR" id="RR">Roraima</option>
+                <option value="SC" id="SC">Santa Catarina</option>
+                <option value="SP" id="SP">São Paulo</option>
+                <option value="SE" id="SE">Sergipe</option>
+                <option value="TO" id="TO">Tocantins</option>
+            </select>
+            <label class="block">Descrição</label>
+            <textarea id="text-descricao" style="resize: none;" maxlength="200" rows="5" cols="40" class="text-area"><%= desc.descricao %></textarea>
+            <label class="block">Idade</label>
+            <input type="number" id="input-idade" placeholder="Idade" value="<%= desc.idade %>" class="input-numero">
+            <input type="submit" value="Atualizar" class="botao-enviar">
+        </fieldset>
     </form>
 
     <script src="/scripts/enviarInformacoes.js"></script>
