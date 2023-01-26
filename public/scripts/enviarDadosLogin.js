@@ -17,7 +17,7 @@ form.addEventListener('submit', function(event) {
         if(response.status == 200) {
             window.location.href = '/dashboard'
         } else {
-            senhaID.setCustomValidity('Senha ou email errados')
+            alert('Senha ou email errados')
         } 
         return response
     })

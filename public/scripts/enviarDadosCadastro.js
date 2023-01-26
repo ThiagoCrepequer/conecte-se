@@ -8,14 +8,14 @@ form.addEventListener('submit', function(event) {
     const senha = senhaID.value
     const confirmaSenha = document.getElementById('confirmaSenha').value
     if(senha !== confirmaSenha) {
-        senhaID.setCustomValidity('As senhas informadas não coincidem')
+        alert('As senhas informadas não coincidem')
         return 
     }
 
     // Verifica se a senha tem os requisitos minimos de segurança
     let arraySenha = senha.split('')
     if(!testeQuantidade(arraySenha) || !testeNumeroLetra(arraySenha) || !testeCaractereEspecial(arraySenha)) {
-        senhaID.setCustomValidity('A senha não cumpre os requisitos mínimos')
+        alert('A senha não cumpre os requisitos mínimos')
         return
     }
 
