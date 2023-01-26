@@ -8,7 +8,7 @@ form.addEventListener('submit', function(event) {
     estado = document.getElementById('estado').value
     dados = { descricao: desc, idade: idade, estado: estado }
 
-    fetch('http://127.0.0.1:3000/dashboard/atualizar', {
+    fetch('/dashboard/atualizar', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(dados)
