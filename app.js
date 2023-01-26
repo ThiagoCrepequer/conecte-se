@@ -164,6 +164,11 @@ app.post('/dashboard/atualizar', (req, res) => {
     }
 })
 
+app.get('/logout', (req, res) => {
+    req.session.Autenticado = undefined
+    res.redirect('/')
+})
+
 app.listen(3000, () => {
     console.log('Servidor online na porta 3000')
 })
