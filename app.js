@@ -26,19 +26,11 @@ const usuarioSchema = new mongoose.Schema({
 })
 const User = mongoose.model('usuarios', usuarioSchema)
 
-const sessionSchema = new mongoose.Schema({
-    session_id: {type: String, required: true},
-    data_criacao: {type: Date, default: Date.now},
-    data_expiracao: {type: Date, expires: '2m'}
-})
-
-const Session = mongoose.model('sessions', sessionSchema)
-
 mongoose.set('strictQuery', true)
 mongoose.connect(url, { useNewUrlParser: true })
 
 
-const store = new MongoStore({ mongooseConnection: mongoose.connection, model: 'sessions' })
+const store = new MongoStore({ mongooseConnection: mongoose.connection })
 
 // Configura a sessão
 app.use(session({
