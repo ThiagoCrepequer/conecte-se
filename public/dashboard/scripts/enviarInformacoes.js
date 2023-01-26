@@ -18,7 +18,7 @@ form.addEventListener('submit', function(event) {
         return response.json()
     })
     .then(function(data) {
-        console.log(data)
+        alert(data.status)
     }) 
     .catch(function(error) {
         console.error('Erro:' + error)
