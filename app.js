@@ -104,8 +104,9 @@ app.post('/cadastro/add', (req, res) => {
 app.get('/login', (req, res) => {
     if(req.session.Autenticado) {
         res.redirect('/dashboard')
+    } else {
+        res.sendFile(__dirname + '/public/login.html')
     }
-    res.sendFile(__dirname + '/public/login.html')
 })
 
 // Página que processa as informações recebidas do login
