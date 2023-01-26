@@ -1,0 +1,96 @@
+@font-face {
+    font-family: 'inter';
+    src: url('../fonts/Inter.ttf');
+}
+
+* {
+    box-sizing: border-box;
+    font-family: inter;
+}
+
+html {
+    background-color: purple;
+}
+
+.menu-voltar {
+    padding: 2px;
+}
+
+.voltar {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.seta-voltar {
+    margin-right: 2px;
+}
+
+.titulo-formulario {
+    float: left;
+    font-size: 2vw;
+    margin: 0;
+    margin-bottom: 4%;
+    color: purple;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.formulario {
+    background-color: rgb(219, 213, 219);
+    padding: 4%;
+    border-radius: 2px 35px 2px 35px;
+    -webkit-box-shadow: -3px 4px 18px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: -3px 4px 18px -3px rgba(0,0,0,0.75);
+    box-shadow: -3px 4px 18px -3px rgba(0,0,0,0.75);
+}
+
+.input {
+    display: grid;
+    padding: 1vw;
+    margin-top: 5%;
+    width: 23vw;
+    border-radius: 7px 7px;
+    border-width: 1px;
+    border-color: gray;
+}
+
+.input:focus {
+    border-color: purple;
+}
+
+.botao-enviar {
+    margin-top: 5%;
+    float: right;
+    padding: 1vw;
+    border-radius: 7px 7px;
+    border-width: 0px;
+    background-color: purple;
+    color: rgb(228, 228, 228);
+}
+
+.botao-enviar:hover {
+    background-color: rgb(102, 1, 102);
+    cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+    .titulo-formulario {
+        font-size: 5vw;
+    }
+
+    .input {
+        width: 60vw;
+        padding: 2.7vw;
+    }
+
+    .botao-enviar {
+        padding: 3vw;
+    }
+}

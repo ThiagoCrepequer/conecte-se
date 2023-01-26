@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/boxFormulario.css">
+    <link rel="stylesheet" href="/styles/styleLogin.css">
+    <title>Login</title>
+</head>
+<body>
+    <nav class="menu-voltar">
+        <a href="/" class="voltar"><span class="seta-voltar">&larr;</span>Voltar</a>
+    </nav>
+    <div class="section">
+        <form id="formulario-login" class="formulario">
+            <h1 class="titulo-formulario">Login</h1>
+            <div>
+                <input class="input" type="text" id="email-login" placeholder="Email">
+            </div>
+            <div>
+                <input class="input" type="password" id="senha-login" placeholder="Senha">
+            </div>
+            <input type="submit" value="Enviar" class="botao-enviar">
+            <nav class="menu-cadastro">
+                <p class="texto-cadastro">Não tem cadastro? <a href="/cadastro" class="link-cadastro">Inscreva-se</a></p>
+            </nav>
+        </form>
+    </div>
+
+    <script src="/scripts/enviarDadosLogin.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/boxFormulario.css">
+    <link rel="stylesheet" href="/styles/styleCadastro.css">
+    <title>Cadastro novo usuário</title>
+</head>
+<body>
+    <nav class="menu-voltar">
+        <a href="/" class="voltar"><span class="seta-voltar">&larr;</span>Voltar</a>
+    </nav>
+    <div class="section">
+        <form id="formulario-cadastro" class="formulario">
+            <h1 class="titulo-formulario">Cadastro</h1>
+            <div>    
+                <input class="input" type="text" id="nome" placeholder="Nome" required>
+            </div> 
+            <div>
+                <input class="input" type="email" id="email" placeholder="Email" required>
+            </div>
+            <div>
+                <input class="input" type="password" id="senha" placeholder="Senha" required>
+                <div>
+                    <ul hidden="true" id="lista-condicoes-senha">
+                        <li class="senha-condicoes" id="quantidade-caractere">6 caracteres pelo menos</li>
+                        <li class="senha-condicoes" id="minimo-numero-letra">No mínimo 1 número e uma letra</li>
+                        <li class="senha-condicoes" id="caractere-especial">Ao menos 1 caractere especial</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <input class="input" type="password" id="confirmaSenha" placeholder="Confirmar senha" required>
+            </div>
+            <input type="submit" value="Enviar" class="botao-enviar">
+
+            <nav class="menu-login">
+               <p class="texto-login">Já tem login? <a href="/login" class="link-login">Entre</a></p>
+            </nav>
+        </form>
+    </div>
+
+    <script src="/scripts/verificarQualidadeSenha.js"></script>
+    <script src="/scripts/enviarDadosCadastro.js"></script>
+</body>
+</html>

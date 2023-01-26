@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+}
+
+.menu {
+    background-color: rgb(240, 240, 240);
+    width: 100%;
+    height: 70px;
+}
+
+.lista-menu {
+    position: absolute;
+    right: 20px;
+    top: 25px;
+}
+
+li {
+    display: inline;
+    margin: 5px;
+}
+
+.texto-menu {
+    padding: 12px;
+    text-decoration: none;
+    color: purple;
+    border-radius: 7px;
+    transition: 0.3s;
+}
+
+.texto-menu:hover {
+    background-color: purple;
+    color: rgb(243, 243, 243);
+}

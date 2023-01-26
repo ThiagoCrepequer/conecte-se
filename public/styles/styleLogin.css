@@ -1,0 +1,8 @@
+.link-cadastro {
+    text-decoration: none;
+    color: purple;
+}
+
+.link-cadastro:hover {
+    text-decoration: underline;
+}

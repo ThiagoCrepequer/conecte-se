@@ -1,0 +1,12 @@
+.link-login {
+    text-decoration: none;
+    color: purple;
+}
+
+.link-login:hover {
+    text-decoration: underline;
+}
+
+.senha-condicoes {
+    color: red;
+}

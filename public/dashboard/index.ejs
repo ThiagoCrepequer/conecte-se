@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+</head>
+<body>
+    <input type="hidden" id="id-estado" value="<%= desc.estado %>">
+    <h1>Bem vindo, <%= data.nome %></h1>
+    <div>
+        <p><%= data.email %></p>
+    </div>
+    <form id="formulario-informacoes">
+        <select id="estado" name="estados">
+            <option value="AC" id="AC">Acre</option>
+            <option value="AL" id="AL">Alagoas</option>
+            <option value="AP" id="AP">Amapá</option>
+            <option value="AM" id="AM">Amazonas</option>
+            <option value="BA" id="BA">Bahia</option>
+            <option value="CE" id="CE">Ceará</option>
+            <option value="DF" id="DF">Distrito Federal</option>
+            <option value="ES" id="ES">Espírito Santo</option>
+            <option value="GO" id="GO">Goiás</option>
+            <option value="MA" id="MA">Maranhão</option>
+            <option value="MT" id="MT">Mato Grosso</option>
+            <option value="MS" id="MS">Mato Grosso do Sul</option>
+            <option value="MG" id="MG">Minas Gerais</option>
+            <option value="PA" id="PA">Pará</option>
+            <option value="PB" id="PB">Paraíba</option>
+            <option value="PR" id="PR">Paraná</option>
+            <option value="PE" id="PE">Pernambuco</option>
+            <option value="PI" id="PI">Piauí</option>
+            <option value="RJ" id="RJ">Rio de Janeiro</option>
+            <option value="RN" id="RN">Rio Grande do Norte</option>
+            <option value="RS" id="RS">Rio Grande do Sul</option>
+            <option value="RO" id="RO">Rondônia</option>
+            <option value="RR" id="RR">Roraima</option>
+            <option value="SC" id="SC">Santa Catarina</option>
+            <option value="SP" id="SP">São Paulo</option>
+            <option value="SE" id="SE">Sergipe</option>
+            <option value="TO" id="TO">Tocantins</option>
+        </select>
+        <input type="text" id="input-descricao" placeholder="Descrição" value="<%= desc.descricao %>">
+        <input type="number" id="input-idade" placeholder="Idade" value="<%= desc.idade %>">
+        <input type="submit">
+    </form>
+
+    <script src="/scripts/enviarInformacoes.js"></script>
+    <script src="/scripts/addSelected.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/menu.css">
+    <title>Crepequer</title>
+</head>
+<body>
+    <nav class="menu">
+        <ul class="lista-menu">
+            <li id="login"><a href="/login" class="texto-menu">LOGIN</a></li>
+            <li id="cadastro"><a href="/cadastro" class="texto-menu">CADASTRO</a></li>
+            <% if(nome.nome) { %>
+                <li id="perfil"><a href="/dashboard" class="texto-menu">PERFIL</a></li>
+            <% } %>
+        </ul>
+    </nav>
+    <h1 class="texto-titulo">Encontre profissionais <span style="color: purple;">capacitados</span></h1>
+    <div class="container-usuarios">    
+    <% for(let i=0; docs.length > i; i++) { %>
+        <div class="div-usuarios">
+            <h2 class="nome-usuario"> <%= docs[i].nome %> </h2>
+            <p class="desc-usuario"> <%= docs[i].desc.descricao %> </p>
+            
+            <div class="idade-estado">
+                <p class="idade-usuario"><%= docs[i].desc.idade %>y</p>
+                <p class="estado-usuario">estado <%= docs[i].desc.estado %> </p>
+            </div>
+            <div class="overlay"></div>
+            <p class="contato-usuario"> <%= docs[i].email %> </p>
+        </div>
+    <% } %>
+    </div>
+
+    <script src="/scripts/hoverEmail.js"></script>
+</body>
+</html>
